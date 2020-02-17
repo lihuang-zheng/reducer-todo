@@ -1,6 +1,6 @@
 import React from "react"
 
-const ListItem = ({ item, completed, id, state, dispatch }) => {
+const TodoItem = ({ item, completed, id, state, dispatch }) => {
     return (
         <div className={"listItem" + ((completed) ? " taskCompleted" : "")}
             onClick={() => dispatch({ type: "TOGGLE_COMPLETION_STATE", payload: id })}
@@ -18,4 +18,4 @@ const ListItem = ({ item, completed, id, state, dispatch }) => {
     )
 }
 
-export default ListItem
+export default TodoItem
