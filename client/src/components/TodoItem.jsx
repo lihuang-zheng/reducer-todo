@@ -1,21 +1,16 @@
-import React from "react"
+import React from "react";
 
 const TodoItem = ({ item, completed, id, state, dispatch }) => {
+
     return (
-        <div className={"listItem" + ((completed) ? " taskCompleted" : "")}
+        <div
+            className={"listItem" + ((completed) ? " taskCompleted" : "")}
             onClick={() => dispatch({ type: "TOGGLE_COMPLETION_STATE", payload: id })}
         >
-            <p>
-                {item} {completed ? " (completed)" : ""}
-            </p>
-            <button
-                onClick={(event) => {
-                    event.stopPropagation()
-                    dispatch({ type: "DELETE_TODO", payload: id })
-                }}
-            >delete</button>
+            <p>{item} {completed ? " (completed)" : ""}</p>
+            <button onClick={(event) => { event.stopPropagation(); dispatch({ type: "DELETE_TODO", payload: id }) }}>Delete</button>
         </div>
     )
 }
 
-export default TodoItem
+export default TodoItem;

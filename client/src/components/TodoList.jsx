@@ -41,7 +41,7 @@ const TodoList = ({ state, dispatch }) => {
             </form>
 
             <div className="todoItems">
-                {state.map(item => (
+                {state.map(task => (
                     <TodoItem
                         key={task.id}
                         item={task.item}
