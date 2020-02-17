@@ -11,7 +11,7 @@ const TodoItem = ({ item, completed, id, state, dispatch }) => {
             <button
                 onClick={(event) => {
                     event.stopPropagation()
-                    dispatch({ type: "DELETE_TASK", payload: id })
+                    dispatch({ type: "DELETE_TODO", payload: id })
                 }}
             >delete</button>
         </div>
