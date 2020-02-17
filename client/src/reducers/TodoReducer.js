@@ -34,7 +34,7 @@ const todoReducer = (state, action) => {
                 if (item.id === action.payload) {
                     return { ...item, completed: !item.completed }
                 } else {
-                    { return item }
+                    return item
                 }
             })
 

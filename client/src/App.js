@@ -5,10 +5,10 @@ import './App.css';
 import TodoList from "./components/TodoList"
 
 // import reducer to the app
-import { initialState, taskReducer } from "./reducers/todoReducer"
+import { initialState, todoReducer } from "./reducers/todoReducer"
 
 function App() {
-  const [state, dispatch] = useReducer(taskReducer, initialState)
+  const [state, dispatch] = useReducer(todoReducer, initialState)
 
   return (
     <div className="App">

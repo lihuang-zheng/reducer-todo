@@ -40,7 +40,7 @@ const TodoList = ({ state, dispatch }) => {
                 </button>
             </form>
 
-            <div className="todoItems">
+            <div className="listItems">
                 {state.map(task => (
                     <TodoItem
                         key={task.id}
