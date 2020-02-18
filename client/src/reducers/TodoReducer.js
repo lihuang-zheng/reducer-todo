@@ -1,46 +1,44 @@
 const initialState = [
     {
-        item: 'Learning Reducer',
+        item: 'Learn about reducers',
         completed: false,
-        id: 123123123
+        id: 3892987589
     },
     {
-        item: 'Learning Complex Reducer',
-        completed: false,
-        id: 234234234
-    }
-]
+        item: 'Prototest',
+        completed: true,
+        id: 684684
+    },
+];
 
-const todoReducer = (state, action) => {
+const taskReducer = (state, action) => {
+
     switch (action.type) {
-        case "ADD_TODO":
+        case "ADD_TASK":
             if (action.payload.trim() === "") {
                 return state;
             }
-            return [...state, {
-                item: action.payload,
-                completed: false,
-                id: Date.now()
-            }]
+            return [...state, { item: action.payload, completed: false, id: Date.now() }];
 
-        case "DELETE_TODO":
-            return state.filter(item => item.id !== action.payload)
+        case "DELETE_TASK":
+            return state.filter(item => item.id !== action.payload);
 
         case "DELETE_ALL_COMPLETED":
-            return state.filter(item => !item.completed)
+            return state.filter(item => !item.completed);
 
-        case "TOGGLE-COMPLETION_STATE":
+        case "TOGGLE_COMPLETION_STATUS":
             return state.map(item => {
                 if (item.id === action.payload) {
                     return { ...item, completed: !item.completed }
-                } else {
+                }
+                else {
                     return item
                 }
             })
 
         default:
-            return state
+            return state;
     }
 }
 
-export { initialState, todoReducer }
+export { initialState, taskReducer };

@@ -1,20 +1,20 @@
-import React, { useReducer } from 'react';
-import './App.css';
+import React, { useReducer } from "react";
 
-//import todo component
-import TodoList from "./components/TodoList"
+import { initialState, taskReducer } from "./reducers/todoReducer";
+import TodoList from "./components/TodoList";
 
-// import reducer to the app
-import { initialState, todoReducer } from "./reducers/todoReducer"
+import "./App.css";
 
 function App() {
-  const [state, dispatch] = useReducer(todoReducer, initialState)
+  //set reducer for state and dispatching.
+  const [state, dispatch] = useReducer(taskReducer, initialState);
 
   return (
-    <div className="App">
+    <div className="content">
       <TodoList state={state} dispatch={dispatch} />
     </div>
-  );
-}
+  )
+
+};
 
 export default App;
